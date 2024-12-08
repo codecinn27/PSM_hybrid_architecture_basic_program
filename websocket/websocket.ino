@@ -26,6 +26,7 @@ String old_value, value;
 ESP8266WiFiMulti    WiFiMulti;
 ESP8266WebServer    server(80);
 WebSocketsServer    webSocket = WebSocketsServer(81);
+
 char html_template[] PROGMEM = R"=====(
 <html lang="en">
    <head>
@@ -109,3 +110,4 @@ void loop() {
   webSocket.broadcastTXT(value);
   delay(50);
 }
+
