@@ -27,9 +27,9 @@ void setup(void)
   Serial.println("");
   Serial.println(WiFi.softAPIP());
 
-  // MDNS.addService("_http", "_tcp", 80);
+  MDNS.addService("_http", "_tcp", 80);
 
-  if (MDNS.begin("ESP")) { //esp.local/
+  if (MDNS.begin("wemos1")) { //esp.local/
     Serial.println("MDNS responder started");
   }
 
@@ -54,6 +54,9 @@ void setup(void)
 
 void loop(void)
 {
+
+  MDNS.update(); //must add this
+     
 }
 
 /*
